@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Todo" ADD COLUMN "nextReviewDate" DATETIME;
+ALTER TABLE "Todo" ADD COLUMN "reviewCount" INTEGER DEFAULT 0;
