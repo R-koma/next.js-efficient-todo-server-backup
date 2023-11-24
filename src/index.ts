@@ -10,6 +10,13 @@ app.use(express.json());
 app.use(cors());
 const prisma = new PrismaClient();
 
+const corsOptions = {
+  origin: "https://main.dpffvq0483p7p.amplifyapp.com",
+  optionsSuccessStatus: 200, // 一部の古いブラウザに対応するための設定
+};
+
+app.use(cors(corsOptions));
+
 //Todoデータの取得
 app.get("/allTodos", async (req: Request, res: Response) => {
   const allTodos = await prisma.todo.findMany({
