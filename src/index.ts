@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
 
 const corsOptions = {
   origin: "https://main.dpffvq0483p7p.amplifyapp.com",
-  optionsSuccessStatus: 200, // 一部の古いブラウザに対応するための設定
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
@@ -83,7 +83,7 @@ app.get("/allReviews", async (req: Request, res: Response) => {
       where: {
         status: "review",
         nextReviewDate: {
-          lte: currentDate, // "Less than or equal" - 現在の日時よりも過去のnextReviewDateを持つもの
+          lte: currentDate,
         },
       },
     });
